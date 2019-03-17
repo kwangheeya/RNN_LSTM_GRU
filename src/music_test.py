@@ -177,6 +177,7 @@ def save_dict_to_file(dic, filename):
 
 
 class EarlyStopping():
+    # By https://forensics.tistory.com/29
     def __init__(self, patience, verbose=True):
         self._step = 0
         self._loss = float('inf')
