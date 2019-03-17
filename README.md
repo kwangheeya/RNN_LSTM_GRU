@@ -15,4 +15,4 @@ A tutorial level implementation for RNNs in Pytorch
 * https://github.com/jych/librnn (for importing data)
 
 ## Data reference
-* http://www-etud.iro.umontreal.ca/~boulanni/icml2012
+* Polyphonic music data http://www-etud.iro.umontreal.ca/~boulanni/icml2012
