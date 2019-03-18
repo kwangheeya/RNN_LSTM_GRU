@@ -11,7 +11,7 @@ A tutorial level implementation for RNNs in Pytorch
 * RNN with GRU unit
 
 ## Reference
-* "Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling(https://arxiv.org/abs/1412.3555)"
+* "[Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling](https://arxiv.org/abs/1412.3555)"
 
 ## Reference codes
 * https://github.com/locuslab/TCN (for training & testing models)
