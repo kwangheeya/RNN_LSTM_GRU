@@ -89,6 +89,7 @@ X_test = convert_nparr_to_tensor(mdata.get_data(which_set='test'))
 # settings
 input_size = mdata.max_label
 dropout = args.dropout
+#criterion = nn.CrossEntropyLoss()
 lr = args.lr
 
 
@@ -97,7 +98,7 @@ lr = args.lr
 
 model = None
 if args.model_name == 'MLP':
-    model = Basic_MLP(input_size, input_size, 66)
+    model = Basic_MLP(input_size, input_size, 61)
 elif args.model_name == 'RNN':
     model = RNN_tanh(input_size, 100, cuda_on = args.cuda)
 elif args.model_name == 'LSTM':
@@ -176,7 +177,6 @@ def save_dict_to_file(dic, filename):
 
 
 class EarlyStopping():
-    # By https://forensics.tistory.com/29
     def __init__(self, patience, verbose=True):
         self._step = 0
         self._loss = float('inf')
