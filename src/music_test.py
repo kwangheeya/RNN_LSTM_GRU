@@ -69,7 +69,7 @@ def convert_nparr_to_tensor(X_data):
         X_data[i] = torch.Tensor(elem.astype(np.float64))
     return X_data
 
-mdata = Music_Sequence('nottingham', forcing_max_length=True, stop=None)
+mdata = Music_Sequence(args.data, forcing_max_length=True, stop=None)
 X_train = convert_nparr_to_tensor(mdata.get_data(which_set='train'))
 X_valid = convert_nparr_to_tensor(mdata.get_data(which_set='valid'))
 X_test = convert_nparr_to_tensor(mdata.get_data(which_set='test'))
@@ -89,7 +89,6 @@ X_test = convert_nparr_to_tensor(mdata.get_data(which_set='test'))
 # settings
 input_size = mdata.max_label
 dropout = args.dropout
-#criterion = nn.CrossEntropyLoss()
 lr = args.lr
 
 
@@ -233,8 +232,8 @@ if __name__ == "__main__":
             loss_out['train'].append(rloss)
             tloss = evaluate(X_test, name='Test')
             loss_out['test'].append(tloss)
-            print("Epoch {:2d} \t| lr {:.5f} | rloss {:.5f} | vloss {:.5f} | time {:.3f}".format(
-                ep, lr, rloss, vloss, cumul_time))
+            print("Epoch {:2d} \t| lr {:.5f} | rloss {:.5f} | vloss {:.5f} | tloss {:.5f} | time {:.3f}".
+                  format(ep, lr, rloss, vloss, tloss, cumul_time))
         if ep > 100 and early_stopping.validate(vloss):
             break
     print('-' * 89)
